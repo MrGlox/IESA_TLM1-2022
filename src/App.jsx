@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-import Item from "./components/Item";
+import List from "./components/List";
 
 import data from "./data.json";
 
@@ -13,9 +13,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Item title={data[0].title} status={data[0].status}>
+        {/* <Item title={data[0].title} status={data[0].status}>
           {data[0].children}
-        </Item>
+        </Item> */}
+
+        <List apparts={data}></List>
         <a
           className="App-link"
           href="https://reactjs.org"

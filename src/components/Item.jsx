@@ -2,7 +2,7 @@ import "./Item.scss";
 
 export default function Item({ title, children, status }) {
   return (
-    <div>
+    <li>
       <h2>
         <span
           className={`pellet ${status ? " pellet--green" : " pellet--red"}`}
@@ -10,6 +10,6 @@ export default function Item({ title, children, status }) {
         {title}
       </h2>
       <p>{children}</p>
-    </div>
+    </li>
   );
 }
