@@ -1,0 +1,14 @@
+.pellet {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+
+  &--green {
+    background-color: green;
+  }
+
+  &--red {
+    background-color: red;
+  }
+}
