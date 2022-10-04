@@ -7,9 +7,13 @@ export default function List({ apparts = [] }) {
 
   return (
     <ul>
-      {apparts.map((appart) => {
+      {apparts.map((appart, index) => {
         return (
-          <Item title={appart.title} status={appart.status}>
+          <Item
+            key={"item" + index}
+            title={appart.title}
+            status={appart.status}
+          >
             {appart.children}
           </Item>
         );

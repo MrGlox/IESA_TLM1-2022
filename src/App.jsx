@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import List from "./components/List";
+import Clock from "./containers/Clock";
 
 import data from "./data.json";
 
@@ -17,7 +18,10 @@ function App() {
           {data[0].children}
         </Item> */}
 
+        <Clock />
+
         <List apparts={data}></List>
+
         <a
           className="App-link"
           href="https://reactjs.org"
