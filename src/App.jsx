@@ -17,6 +17,9 @@ function App() {
             <li>
               <Link to="/apparts">Apparts</Link>
             </li>
+            <li>
+              <Link to="/fetch">Fetch</Link>
+            </li>
           </ul>
         </nav>
       </header>

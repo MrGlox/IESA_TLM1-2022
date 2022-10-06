@@ -6,6 +6,7 @@ import App from "./App";
 
 import Form from "containers/Form";
 import Clock from "containers/Clock";
+import Fetch from "containers/Fetch";
 
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/apparts",
         element: <Form />,
+      },
+      {
+        path: "/fetch",
+        element: <Fetch />,
       },
     ],
   },
