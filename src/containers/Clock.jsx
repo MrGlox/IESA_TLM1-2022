@@ -11,7 +11,7 @@ function Clock() {
     return () => {
       clearInterval(() => setDate(new Date()));
     };
-  }, [date]);
+  }, []); // componentDidMount
 
   return <h2>Mon heure est : {date.toLocaleTimeString()}</h2>;
 }
