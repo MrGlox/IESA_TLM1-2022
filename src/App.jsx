@@ -1,33 +1,28 @@
-import logo from "./logo.svg";
 import "./App.css";
 
-import Clock from "containers/Clock";
-import Form from "containers/Form";
+import { Link, Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {/* <Item title={data[0].title} status={data[0].status}>
-          {data[0].children}
-        </Item> */}
-
-        <Clock />
-        <Form />
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/clock">Clock</Link>
+            </li>
+            <li>
+              <Link to="/custom">Custom</Link>
+            </li>
+            <li>
+              <Link to="/apparts">Apparts</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
+      <main className="App-main">
+        <Outlet />
+      </main>
     </div>
   );
 }
