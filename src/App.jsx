@@ -1,11 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-import List from "./components/List";
-import Clock from "./containers/Clock";
-import Form from "./containers/Form";
-
-import data from "./data.json";
+import Clock from "containers/Clock";
+import Form from "containers/Form";
 
 function App() {
   return (
@@ -21,8 +18,6 @@ function App() {
 
         <Clock />
         <Form />
-
-        <List apparts={data}></List>
 
         <a
           className="App-link"
