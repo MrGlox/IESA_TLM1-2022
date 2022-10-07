@@ -1,13 +1,21 @@
 import "./Item.scss";
+import { Link } from "react-router-dom";
+import slugify from "slugify";
 
 export default function Item({ title, children, status }) {
   return (
     <li>
       <h2>
-        <span
-          className={`pellet ${status ? " pellet--green" : " pellet--red"}`}
-        ></span>
-        {title}
+        <Link
+          to={slugify(title, {
+            lower: true,
+          })}
+        >
+          <span
+            className={`pellet ${status ? " pellet--green" : " pellet--red"}`}
+          ></span>
+          {title}
+        </Link>
       </h2>
       <p>{children}</p>
     </li>

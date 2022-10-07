@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import App from "./App";
 
+import Appart from "containers/Appart";
 import Form from "containers/Form";
 import Clock from "containers/Clock";
 import Fetch from "containers/Fetch";
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/apparts/:slug",
+        element: <Appart />,
+      },
+      {
         path: "/apparts",
         element: <Form />,
       },
@@ -45,8 +51,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
