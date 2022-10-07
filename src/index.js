@@ -13,6 +13,8 @@ import Fetch from "containers/Fetch";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
+import { MainProvider } from "contexts/Main";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,9 +57,11 @@ const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
-  </QueryClientProvider>
+  <MainProvider>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </MainProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
