@@ -8,7 +8,7 @@ export default function Form() {
     <>
       <div>
         {/* input for filter */}
-        <input type="text" onChange={handleChange} />
+        <input type="text" defaultValue={value} onChange={handleChange} />
         <p>{value}</p>
       </div>
       {/* display list */}

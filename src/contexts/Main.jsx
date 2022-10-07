@@ -7,7 +7,7 @@ export default MainContext;
 
 export function MainProvider({ children }) {
   // state to handle value from input
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(localStorage.getItem("filterValue") || "");
 
   // state to handle filtered apparts
   const [filteredApparts, setFilteredApparts] = useState(data);
@@ -28,6 +28,8 @@ export function MainProvider({ children }) {
       )
     );
   };
+
+  localStorage.setItem("filterValue", value);
 
   return (
     <MainContext.Provider value={{ value, filteredApparts, handleChange }}>
